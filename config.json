@@ -1,0 +1,12 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "reporters": [
+      ["json", { "fileName": "./reports/results.json" }],
+      ["pa11y-reporter-html", { "fileName": "./reports/results.html" }]
+    ]
+  },
+  "urls": [
+    "https://app.kidizz.com/"
+  ]
+}
