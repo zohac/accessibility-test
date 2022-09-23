@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "test": "node --experimental-specifier-resolution=node ./dist/index"
+    "test": "node --trace-warnings --experimental-specifier-resolution=node ./dist/index"
   },
   "dependencies": {
     "axios": "^0.27.2",

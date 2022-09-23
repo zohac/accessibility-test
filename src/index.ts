@@ -1,5 +1,5 @@
-import { Pa11yDefaultOptionInterface, ResultsInterface, SitemapInterface } from '@/interface'
-import { CliReporter, HtmlReporter, JsonReporter, SitemapParser } from './utility'
+import { Pa11yDefaultOptionInterface, ResultsInterface } from '@/interface'
+import { CliReporter, HtmlReporter, JsonReporter } from './utility'
 import configs from './config'
 
 // @ts-ignore
@@ -15,16 +15,4 @@ configs.forEach((config: Pa11yDefaultOptionInterface) => {
         html.export()
         json.export()
     })
-})
-
-/*
- * Get
- */
-const sitemapParser = new SitemapParser()
-
-await sitemapParser.fetch('https://pa11y.org/sitemap.xml')
-const sitemap: SitemapInterface = sitemapParser.parse()
-
-sitemap.urlset.url.forEach(url => {
-    console.log(url.loc)
 })
