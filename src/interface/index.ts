@@ -1,3 +1,5 @@
 export { OptionInterface } from './option.interface'
 export { ResultsInterface } from './results.interface'
 export { ReporterOptionInterface } from './reporter.option.interface'
+export { SitemapInterface } from './sitemap.interface'
+export { UrlSitemapInterface } from './url.sitemap.interface'

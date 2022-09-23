@@ -1,3 +1,6 @@
 export { CliReporter } from './cli.reporter'
 export { HtmlReporter } from './html.reporter'
 export { DateHelper } from './date.helper'
+export { JsonReporter } from './json.reporter'
+export { SitemapParser } from './sitemap.parser'
+export { UrlHelper } from './url.helper'
