@@ -1,0 +1,8 @@
+{
+  "reportFolderName": "reports",
+  "standard": "WCAG2AA",
+  "sitemap": false,
+  "urls": [
+    "https://pa11y.org/"
+  ]
+}

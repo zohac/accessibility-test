@@ -21,7 +21,7 @@ interface Viewport {
   hasTouch?: boolean;
 }
 
-export interface OptionsInterface {
+export interface Pa11yOptionsInterface {
   actions?: string[];
   browser?: Browser;
   page?: Page;

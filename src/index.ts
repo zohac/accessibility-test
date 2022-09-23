@@ -1,6 +1,6 @@
 import { Pa11yDefaultOptionInterface, ResultsInterface, SitemapInterface } from '@/interface'
 import { CliReporter, HtmlReporter, JsonReporter, SitemapParser } from './utility'
-import { configs } from './config'
+import configs from './config'
 
 // @ts-ignore
 import pa11y from 'pa11y'
@@ -22,7 +22,9 @@ configs.forEach((config: Pa11yDefaultOptionInterface) => {
  */
 const sitemapParser = new SitemapParser()
 
-await sitemapParser.fetch('https://patio-conseil.fr/page-sitemap.xml')
+await sitemapParser.fetch('https://pa11y.org/sitemap.xml')
 const sitemap: SitemapInterface = sitemapParser.parse()
 
-console.log(sitemap)
+sitemap.urlset.url.forEach(url => {
+    console.log(url.loc)
+})

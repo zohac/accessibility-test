@@ -218,5 +218,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-report/
+reports/
 documents/
+accessibility-test.json

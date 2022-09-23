@@ -1,9 +1,8 @@
 import { AccessibilityStandardType } from '../type'
 
-export interface ReporterOptionInterface {
-  reportFolder: string
-  screenCapture: string
-  fileName: string
+export interface AccessibilityTestFileInterface {
+  reportFolderName: string
   standard: AccessibilityStandardType
+  sitemap: boolean
   urls: string[]
 }

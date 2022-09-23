@@ -1,6 +1,6 @@
-import { OptionsInterface } from './options.interface'
+import { Pa11yOptionsInterface } from './pa11y.options.interface'
 
 export interface Pa11yDefaultOptionInterface {
   url: string,
-  options: OptionsInterface
+  options: Pa11yOptionsInterface
 }

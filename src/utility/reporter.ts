@@ -1,5 +1,6 @@
 import { ReporterOptionInterface, ResultsInterface } from '@/interface'
-import { ExtensionType } from '../type/extension.type'
+import { fileExists } from './fs.helper'
+import { ExtensionType } from '../type'
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
 
@@ -17,10 +18,22 @@ export abstract class Reporter {
       if (!existsSync(resolve(this.REPORT_FOLDER)))
           mkdirSync(this.REPORT_FOLDER, { recursive: true })
 
-      writeFileSync(
-          `${this.REPORT_FOLDER}/${this.FILE_NAME}.${extension}`,
-          report,
-          'utf8',
-      )
+      const filepath = this.getFilePath(`${this.REPORT_FOLDER}/${this.FILE_NAME}.${extension}`)
+
+      writeFileSync(filepath, report, 'utf8')
+  }
+
+  private getFilePath (filePath: string, counter: number = 0): string {
+      const fileParts = filePath.split('.')
+
+      let filePathName = 0 === counter ? filePath : `${fileParts[0]}-${counter}.${fileParts[1]}`
+
+      if (fileExists(filePathName)) {
+          counter++
+
+          filePathName = this.getFilePath(filePath, counter)
+      }
+
+      return filePathName
   }
 }

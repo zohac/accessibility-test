@@ -1,12 +1,23 @@
 import { defaultReporterOption } from './default.reporter.option'
 import { Pa11yDefaultOptionInterface } from '@/interface'
 
-export const configs: Pa11yDefaultOptionInterface[] = [
-    {
-        url:     'https://app.kidizz.com/',
+const configs: Pa11yDefaultOptionInterface[] = []
+let counter = 0
+
+defaultReporterOption.urls.forEach(url => {
+    const screenCapturePath = 0 === counter
+        ? defaultReporterOption.screenCapture
+        : `${defaultReporterOption.screenCapture}-${counter}`
+
+    configs.push({
+        url:     url,
         options: {
-            standard:      'WCAG2AA',
-            screenCapture: `${defaultReporterOption.screenCapture}`
+            standard:      defaultReporterOption.standard,
+            screenCapture: `${screenCapturePath}.png`
         }
-    }
-]
+    })
+
+    counter++
+})
+
+export default configs
