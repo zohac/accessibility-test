@@ -10,7 +10,7 @@ export class CliReporter {
     }
 
     display () {
-        if (typeof this.REPORT === 'undefined') 
+        if ('undefined' === typeof this.REPORT)
             throw new Error('The report can not be undefined. Please add it to the reporter. new CliReporter(report).')
 
         const cliResults = cli.results(this.REPORT)
