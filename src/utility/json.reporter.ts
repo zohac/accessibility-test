@@ -2,10 +2,7 @@ import { ResultsInterface } from '@/interface'
 import { Reporter } from './reporter'
 import { defaultReporterOption } from '../config'
 
-// @ts-ignore
-import html from 'pa11y-reporter-html'
-
-export class HtmlReporter extends Reporter {
+export class JsonReporter extends Reporter {
     readonly REPORT: ResultsInterface
 
     constructor (report: ResultsInterface) {
@@ -16,10 +13,10 @@ export class HtmlReporter extends Reporter {
 
     async export () {
         if ('undefined' === typeof this.REPORT)
-            throw new Error('The report can not be undefined. Please add it to the reporter. new HtmlReporter(report).')
+            throw new Error('The report can not be undefined. Please add it to the reporter. new JsonReporter(report).')
 
-        const htmlResults = await html.results(this.REPORT)
+        const jsonResults = JSON.stringify(this.REPORT)
 
-        this.write(htmlResults, 'html')
+        this.write(jsonResults, 'json')
     }
 }

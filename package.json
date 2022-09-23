@@ -4,19 +4,22 @@
   "main": "./dist/index.js",
   "author": "s.jouan",
   "license": "MIT",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "test": "node ./dist/index"
+    "test": "node --experimental-specifier-resolution=node ./dist/index"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "grunt-cli": "^1.4.3",
     "pa11y": "^6.2.3",
     "pa11y-reporter-cli": "^2.0.1",
-    "pa11y-reporter-html": "^2.0.0"
+    "pa11y-reporter-html": "^2.0.0",
+    "xml2json": "^0.12.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",
+    "@types/xml2json": "^0.11.4",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "8.22.0",

@@ -58,7 +58,7 @@ module.exports = {
         'space-infix-ops':                           2,
         'keyword-spacing':                           [2, { 'after': true }],
         'space-unary-ops':                           [2, { 'words': true, 'nonwords': false }],
-        'yoda':                                      [2, 'never'],
+        'yoda':                                      ['error', 'always'],
         'brace-style':                               [2, 'stroustrup', { 'allowSingleLine': false }],
         'eol-last':                                  2,
         'indent':                                    2,
