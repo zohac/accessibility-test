@@ -1,11 +1,11 @@
-import { OptionInterface, ResultsInterface, SitemapInterface } from '@/interface'
+import { Pa11yDefaultOptionInterface, ResultsInterface, SitemapInterface } from '@/interface'
 import { CliReporter, HtmlReporter, JsonReporter, SitemapParser } from './utility'
 import { configs } from './config'
 
 // @ts-ignore
 import pa11y from 'pa11y'
 
-configs.forEach((config: OptionInterface) => {
+configs.forEach((config: Pa11yDefaultOptionInterface) => {
     pa11y(config.url, config.options, (_error: any, results: ResultsInterface) => {
         const cli = new CliReporter(results)
         const html = new HtmlReporter(results)

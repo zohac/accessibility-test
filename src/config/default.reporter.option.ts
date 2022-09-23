@@ -4,7 +4,8 @@ import { resolve } from 'path'
 import { DateHelper } from '../utility/date.helper'
 
 const date = DateHelper.getCurrentDateToString()
-const reportFolder = `report/report-${date}`
+const defaultReportFolderName = 'report'
+const reportFolder = `${defaultReportFolderName}/report-${date}`
 
 if (!existsSync(resolve(reportFolder)))
     mkdirSync(reportFolder, { recursive: true })

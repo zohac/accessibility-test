@@ -1,9 +1,9 @@
 import { defaultReporterOption } from './default.reporter.option'
-import { OptionInterface } from '@/interface'
+import { Pa11yDefaultOptionInterface } from '@/interface'
 
-export const configs: OptionInterface[] = [
+export const configs: Pa11yDefaultOptionInterface[] = [
     {
-        url:     'https://pa11y.org/',
+        url:     'https://app.kidizz.com/',
         options: {
             standard:      'WCAG2AA',
             screenCapture: `${defaultReporterOption.screenCapture}`

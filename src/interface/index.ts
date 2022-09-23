@@ -1,4 +1,4 @@
-export { OptionInterface } from './option.interface'
+export { Pa11yDefaultOptionInterface } from './pa11y.default.option.interface'
 export { ResultsInterface } from './results.interface'
 export { ReporterOptionInterface } from './reporter.option.interface'
 export { SitemapInterface } from './sitemap.interface'

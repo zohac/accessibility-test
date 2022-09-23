@@ -51,7 +51,7 @@ interface Options {
   wait?: number;
 }
 
-export interface OptionInterface {
+export interface Pa11yDefaultOptionInterface {
   url: string,
   options: Options
 }
